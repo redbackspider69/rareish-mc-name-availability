@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MC Username Checker</title>
+  <script>
+    function updateStatus() {
+      fetch('/status')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('status').innerText = "Checking: " + data.current;
+        });
+      fetch('/usernames')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('results').innerText = data.available_usernames.join(', ');
+          document.getElementById('lost').innerText = data.lost_usernames.join(', ');
+          document.getElementById('other').innerText = data.other_usernames.join(', ');
+          document.getElementById('taken').innerText = data.taken_usernames.join(', ');
+        });
+    }
+
+    function startChecking() {
+      fetch('/start', { method: 'POST' });
+    }
+
+    function stopChecking() {
+      fetch('/stop', { method: 'POST' });
+    }
+
+    setInterval(updateStatus, 1000);
+  </script>
+</head>
+<body>
+  <h1>MC Username Checker</h1>
+  <button onclick="startChecking()">Start</button>
+  <button onclick="stopChecking()">Stop</button>
+  <p id="status">Checking: (nothing yet)</p>
+  <p>Available usernames:</p>
+  <pre id="results"></pre>
+  <p>Rate-limited usernames:</p>
+  <pre id="lost"></pre>
+  <p>Other usernames:</p>
+  <pre id="other"></pre>
+  <p>Taken usernames:</p>
+  <pre id="taken"></pre>
+</body>
+</html>
