@@ -47,7 +47,10 @@ def check_username(name):
     return
 
   try:
-    res = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{name}", timeout=5)
+    headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    }
+    res = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{name}", headers=headers, timeout=5)
     print(f"Checking {name} → {res.status_code}")
 
     with lock:
@@ -81,6 +84,7 @@ def generate_usernames():
   for r in (3, 4):
     for combo in product(charset, repeat=r):
       yield ''.join(combo)
+      print(combo)
 
 def start_checking():
   global thread_running, username_generator

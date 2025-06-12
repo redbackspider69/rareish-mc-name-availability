@@ -1,16 +1,12 @@
 {
-  "taken": [
+  "taken": [],
+  "available": [],
+  "lost": [],
+  "other": [
     "aaa",
     "aab",
     "aac",
     "aad",
-    "aae",
-    "aaf",
-    "aag",
-    "aah",
-    "aai"
-  ],
-  "available": [],
-  "lost": [],
-  "other": []
+    "aae"
+  ]
 }
