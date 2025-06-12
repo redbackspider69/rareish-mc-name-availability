@@ -48,7 +48,7 @@ def check_username(name):
 
   try:
     headers = {
-    "User-Agent": "https://github.com/redbackspider69/rareish-mc-name-availability"
+    "User-Agent": "https://github.com/redbackspider69/MCNameAvailabilityChecker"
     }
     res = requests.get(f"https://playerdb.co/api/player/minecraft/{name}", headers=headers, timeout=5)
     print(f"Checking {name} → {res.status_code}")
