@@ -48,9 +48,9 @@ def check_username(name):
 
   try:
     headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    "User-Agent": "https://github.com/redbackspider69/rareish-mc-name-availability"
     }
-    res = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{name}", headers=headers, timeout=5)
+    res = requests.get(f"https://playerdb.co/api/player/minecraft/{name}", headers=headers, timeout=5)
     print(f"Checking {name} → {res.status_code}")
 
     with lock:
