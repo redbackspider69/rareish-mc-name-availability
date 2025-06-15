@@ -5,6 +5,9 @@ import threading
 import time
 from flask import Flask, render_template, jsonify, request
 
+# Configuration
+delayBetweenChecks = 0.05  # seconds between checks
+
 app = Flask(__name__)
 
 CACHE_FILE = 'username_cache.json'
@@ -119,7 +122,7 @@ def start_checking():
       print("[!] Stop flag detected")
       break
     check_username(name)
-    time.sleep(0.1)
+    time.sleep(delayBetweenChecks)
 
   thread_running = False
 
