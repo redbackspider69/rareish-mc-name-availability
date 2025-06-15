@@ -6,8 +6,8 @@
 1. Install Python 3.12.7+ at https://www.python.org/downloads/.
 2. [Download the source files for the program.](https://github.com/redbackspider77/RareishMCNameAvailabilityChecker/archive/refs/heads/main.zip)
 3. Extract the zip file wherever you want.
-4. Run `app.py` where you extracted the zip file.
-5. Go to the development server link, typically http://127.0.0.1:5000/. <img src="/assets/link.png" align="right"/>
+4. Run `app.py` where you extracted the zip file. <img src="/assets/link.png" align="right"/>
+5. Go to the development server link, typically http://127.0.0.1:5000/. 
 * Press `Start` to start cycling through 3 and 4 letter usernames.
 * Press `Stop` to stop cycling.
 * Press `Reset` to clear cache to be able to restart from `aaa`.
