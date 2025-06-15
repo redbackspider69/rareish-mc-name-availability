@@ -75,7 +75,7 @@ def check_username(name):
       if res.status_code == 200:
         print(f"[TAKEN] {name}")
         taken_usernames.append(name)
-      elif res.status_code == 404:
+      elif res.status_code == 400:
         print(f"[AVAILABLE] {name}")
         available_usernames.append(name)
       else:
