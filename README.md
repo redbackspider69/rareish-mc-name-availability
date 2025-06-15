@@ -15,3 +15,4 @@
 * "Rate-limited usernames" include those who were hit with status code `429`.
 * "Other usernames" encountered any other status code.
 * "Error usernames" are those who encountered an exception in the program unexpectedly.
+* Cache of all checked usernames is saved in `username_cache.json`.
