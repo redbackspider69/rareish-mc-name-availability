@@ -1,5 +1,5 @@
 # RareishMCNameAvailabilityChecker
-[Flask](https://flask.palletsprojects.com/en/stable/) program which cycles through all 3 and 4 letter accepted [Minecraft](https://www.minecraft.net) account usernames, checking their availability using [PlayerDB.co](https://playerdb.co/) and displaying the results on a localhost webpage.
+[Flask](https://flask.palletsprojects.com/en/stable/) program which cycles through all 3 and 4 letter accepted [Minecraft](https://www.minecraft.net) account usernames, checking their availability using [PlayerDB.co](https://playerdb.co/) and displaying the results on a localhost webpage. Made this because I wanted a "rare" Minecraft username. :)
 
 # Usage
 
