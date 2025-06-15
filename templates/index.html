@@ -2,46 +2,29 @@
 <html>
 <head>
   <title>MC Username Checker</title>
-  <script>
-    function updateStatus() {
-      fetch('/status')
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('status').innerText = "Checking: " + data.current;
-        });
-      fetch('/usernames')
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('results').innerText = data.available_usernames.join(', ');
-          document.getElementById('lost').innerText = data.lost_usernames.join(', ');
-          document.getElementById('other').innerText = data.other_usernames.join(', ');
-          document.getElementById('taken').innerText = data.taken_usernames.join(', ');
-        });
-    }
-
-    function startChecking() {
-      fetch('/start', { method: 'POST' });
-    }
-
-    function stopChecking() {
-      fetch('/stop', { method: 'POST' });
-    }
-
-    setInterval(updateStatus, 1000);
-  </script>
+  <script src="static/script.js" defer></script>
 </head>
 <body>
   <h1>MC Username Checker</h1>
   <button onclick="startChecking()">Start</button>
   <button onclick="stopChecking()">Stop</button>
-  <p id="status">Checking: (nothing yet)</p>
-  <p>Available usernames:</p>
+  <button onclick="resetChecker()">Reset</button>
+
+  <p id="status">Status: Idle</p>
+
+  <h3>Available usernames:</h3>
   <pre id="results"></pre>
-  <p>Rate-limited usernames:</p>
+
+  <h3>Rate-limited usernames:</h3>
   <pre id="lost"></pre>
-  <p>Other usernames:</p>
+
+  <h3>Other usernames:</h3>
   <pre id="other"></pre>
-  <p>Taken usernames:</p>
+
+  <h3>Error usernames:</h3>
+  <pre id="error"></pre>
+
+  <h3>Taken usernames:</h3>
   <pre id="taken"></pre>
 </body>
 </html>
